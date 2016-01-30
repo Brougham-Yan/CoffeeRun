@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeRun.CSharp", "CoffeeRun.CSharp.csproj", "{509C6E23-C2E4-9FD1-E21F-2D9372798709}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{C2A4DF94-C421-200B-ACBF-93AFAF51F0AB}") = "CoffeeRun", "Assembly-CSharp.csproj", "{F5A69C32-ABCD-9DB2-AC17-C86502241649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{509C6E23-C2E4-9FD1-E21F-2D9372798709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{509C6E23-C2E4-9FD1-E21F-2D9372798709}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{509C6E23-C2E4-9FD1-E21F-2D9372798709}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{509C6E23-C2E4-9FD1-E21F-2D9372798709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A69C32-ABCD-9DB2-AC17-C86502241649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A69C32-ABCD-9DB2-AC17-C86502241649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A69C32-ABCD-9DB2-AC17-C86502241649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A69C32-ABCD-9DB2-AC17-C86502241649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
