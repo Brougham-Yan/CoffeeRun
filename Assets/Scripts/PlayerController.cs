@@ -27,14 +27,16 @@ public class PlayerController : MonoBehaviour {
 			coffeeTemperature -= temperatureDecay;
 		}
 
-	    if(Input.GetKey(KeyCode.LeftArrow) ) {
+		float horizontalInput = Input.GetAxisRaw ("Horizontal");
+
+	    if(horizontalInput < 0) {
           //  Rigidbody body = GetComponent<Rigidbody>();
             float velX = body.velocity.x - (acceleration * Time.deltaTime);
             velX = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
             body.velocity = new Vector3(velX, body.velocity.y, body.velocity.z);
 			velocity.x = velX;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) ) {
+		if (horizontalInput > 0) {
            // Rigidbody body = GetComponent<Rigidbody>();
             float velX = body.velocity.x + (acceleration * Time.deltaTime);
             velX = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
@@ -49,6 +51,20 @@ public class PlayerController : MonoBehaviour {
             body.velocity = new Vector3(body.velocity.x, velY, body.velocity.z);
 			velocity.x = body.velocity.x; // save x velocity when you jump so you will keep it upon landing
         }
+
+		for (int i = 0; i < Input.touchCount; i++) { //touch controls
+			if (Input.GetTouch (i).position.x < Screen.width / 2) {//touch the left half of the screen
+				float velX = body.velocity.x - (acceleration * Time.deltaTime);
+				velX = Mathf.Clamp (velX, -maxSpeed, maxSpeed);
+				body.velocity = new Vector3 (velX, body.velocity.y, body.velocity.z);
+				velocity.x = velX;
+			} else if (Input.GetTouch (i).position.x > Screen.width / 2) {
+				float velX = body.velocity.x + (acceleration * Time.deltaTime);
+				velX = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
+				body.velocity = new Vector3(velX, body.velocity.y, body.velocity.z);
+				velocity.x = velX;
+			}
+		}
 
 		if (jumping) {
 			body.velocity = new Vector3(velocity.x, body.velocity.y, body.velocity.z);
